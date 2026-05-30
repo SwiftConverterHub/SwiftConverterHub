@@ -7,7 +7,7 @@
         body { font-family: 'Segoe UI', sans-serif; text-align: center; background: #1a1a2e; color: white; padding: 20px; }
         .container { background: #16213e; max-width: 600px; margin: auto; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         h1 { color: #4ecca3; }
-        .ad-space { background: #0f3460; padding: 20px; margin: 20px 0; border: 2px dashed #4ecca3; color: #aaa; }
+        .ad-space { background: #0f3460; padding: 20px; margin: 20px 0; border: 2px dashed #4ecca3; color: #aaa; min-height: 250px; }
         button { padding: 15px 40px; background: #4ecca3; color: #16213e; border: none; border-radius: 50px; cursor: pointer; font-size: 18px; font-weight: bold; transition: 0.3s; }
         button:hover { background: #45b791; transform: scale(1.05); }
     </style>
@@ -17,22 +17,38 @@
         <h1>SwiftConverterHub</h1>
         <p>Dosyalarınızı saniyeler içinde dönüştürün.</p>
         
-        <div class="ad-space">Burada Reklamlarınız Görünecek</div>
+        <div class="ad-space">
+            <script>
+                atOptions = {
+                    'key' : '6e51b3b7743a50a58bc59b89c2697dd4',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                };
+            </script>
+            <script src="https://www.highperformanceformat.com/6e51b3b7743a50a58bc59b89c2697dd4/invoke.js"></script>
+        </div>
 
         <input type="file" id="fileInput">
         <br><br>
         <button onclick="redirectUser()">Dönüştürmeye Başla</button>
 
-        <div class="ad-space">Burada Reklamlarınız Görünecek</div>
+        <div class="ad-space">
+            <script>
+                // Adsterra'dan aldığın farklı bir reklam birimi kodun varsa buraya yapıştırabilirsin.
+                // Şimdilik aynı kod çalışacaktır.
+                document.write('<scr'+'ipt src="https://www.highperformanceformat.com/6e51b3b7743a50a58bc59b89c2697dd4/invoke.js"></scr'+'ipt>');
+            </script>
+        </div>
     </div>
 
     <script>
         function redirectUser() {
-            // Buraya yönlendireceğin gerçek dönüştürücü sitenin linkini koyacağız
             alert("Dosyanız hazırlanıyor, lütfen yönlendirilen sayfada dönüştürmeyi tamamlayın.");
-            window.location.href = "https://cloudconvert.com/"
-            
+            window.location.href = "https://cloudconvert.com/";
         }
     </script>
 </body>
 </html>
+
