@@ -35,11 +35,16 @@
         <button onclick="redirectUser()">Dönüştürmeye Başla</button>
 
         <div class="ad-space">
-            <script>
-                // Adsterra'dan aldığın farklı bir reklam birimi kodun varsa buraya yapıştırabilirsin.
-                // Şimdilik aynı kod çalışacaktır.
-                document.write('<scr'+'ipt src="https://www.highperformanceformat.com/6e51b3b7743a50a58bc59b89c2697dd4/invoke.js"></scr'+'ipt>');
+             <script type="text/javascript">
+                atOptions = {
+                    'key' : '6e51b3b7743a50a58bc59b89c2697dd4',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                };
             </script>
+            <script type="text/javascript" src="https://www.highperformanceformat.com/6e51b3b7743a50a58bc59b89c2697dd4/invoke.js"></script>
         </div>
     </div>
 
@@ -51,4 +56,3 @@
     </script>
 </body>
 </html>
-
