@@ -2,41 +2,35 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>SwiftConverterHub - Hızlı Dosya Dönüştürücü</title>
+    <title>SwiftConverterHub - Ücretsiz Dosya Dönüştürücü</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; text-align: center; background: #f0f2f5; padding: 20px; }
-        .container { background: white; max-width: 500px; margin: auto; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        h1 { color: #1a73e8; }
-        input[type="file"] { margin: 20px 0; }
-        button { padding: 12px 25px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
-        button:hover { background: #218838; }
-        #status { margin-top: 20px; font-weight: bold; }
+        body { font-family: 'Segoe UI', sans-serif; text-align: center; background: #1a1a2e; color: white; padding: 20px; }
+        .container { background: #16213e; max-width: 600px; margin: auto; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        h1 { color: #4ecca3; }
+        .ad-space { background: #0f3460; padding: 20px; margin: 20px 0; border: 2px dashed #4ecca3; color: #aaa; }
+        button { padding: 15px 40px; background: #4ecca3; color: #16213e; border: none; border-radius: 50px; cursor: pointer; font-size: 18px; font-weight: bold; transition: 0.3s; }
+        button:hover { background: #45b791; transform: scale(1.05); }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>SwiftConverterHub</h1>
-        <p>Dosyanızı yükleyin ve anında dönüştürün!</p>
+        <p>Dosyalarınızı saniyeler içinde dönüştürün.</p>
+        
+        <div class="ad-space">Burada Reklamlarınız Görünecek</div>
+
         <input type="file" id="fileInput">
-        <br>
-        <button onclick="processFile()">Şimdi Dönüştür</button>
-        <div id="status"></div>
+        <br><br>
+        <button onclick="redirectUser()">Dönüştürmeye Başla</button>
+
+        <div class="ad-space">Burada Reklamlarınız Görünecek</div>
     </div>
 
     <script>
-        function processFile() {
-            const fileInput = document.getElementById('fileInput');
-            const status = document.getElementById('status');
-            
-            if (fileInput.files.length === 0) {
-                alert("Lütfen önce bir dosya seçin!");
-                return;
-            }
-            
-            status.innerText = "İşleniyor... Lütfen bekleyin!";
-            setTimeout(() => {
-                status.innerText = "Başarılı! Dosyanız hazır (Örnek Demo).";
-            }, 2000);
+        function redirectUser() {
+            // Buraya yönlendireceğin gerçek dönüştürücü sitenin linkini koyacağız
+            alert("Dosyanız hazırlanıyor, lütfen yönlendirilen sayfada dönüştürmeyi tamamlayın.");
+            window.location.href = "https://www.google.com"; // Burayı senin seçtiğin siteyle değiştireceğiz
         }
     </script>
 </body>
