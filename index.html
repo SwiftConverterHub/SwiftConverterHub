@@ -1,19 +1,20 @@
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SwiftConverterHub - Global Free Online File Converter</title>
-    <meta name="description" content="SwiftConverterHub is the best free online tool to convert videos, audios, and documents instantly. Supported formats: MP4, MP3, PDF, PNG, JPG, DOCX.">
-    <meta name="keywords" content="free online converter, video converter, mp4 to mp3, file conversion, online tool, swiftconverterhub">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; text-align: center; background: #0f0f1a; color: white; padding: 20px; line-height: 1.6; }
+        body { font-family: 'Segoe UI', sans-serif; text-align: center; background: #0f0f1a; color: white; padding: 20px; line-height: 1.6; }
         .container { background: #16213e; max-width: 600px; margin: auto; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .ad-container { margin: 20px 0; padding: 10px; border: 1px solid #4ecca3; border-radius: 10px; overflow: hidden; }
-        .lang-select { background: #1a1a2e; color: #4ecca3; padding: 12px; width: 100%; border: 1px solid #4ecca3; border-radius: 8px; cursor: pointer; font-weight: bold; }
-        button { padding: 20px; width: 100%; background: #4ecca3; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; color: #16213e; font-size: 18px; transition: 0.3s; }
-        button:hover { background: #45b791; transform: scale(1.02); }
-        .seo-box { display: none; margin-top: 30px; text-align: left; font-size: 14px; color: #94a3b8; border-top: 1px solid #30475e; padding-top: 15px; }
+        .ad-container { margin: 20px 0; border: 1px solid #4ecca3; border-radius: 10px; padding: 5px; }
+        .lang-select { background: #1a1a2e; color: #4ecca3; padding: 10px; width: 100%; border: 1px solid #4ecca3; border-radius: 8px; cursor: pointer; font-weight: bold; }
+        button { padding: 18px; width: 100%; background: #4ecca3; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; color: #16213e; font-size: 18px; margin: 15px 0; }
+        
+        /* PROFESYONEL BİLGİ ALANI */
+        .info-box { background: #1a1a2e; border-left: 5px solid #4ecca3; padding: 20px; text-align: left; margin-top: 30px; border-radius: 5px; }
+        .info-box h3 { color: #4ecca3; margin-top: 0; }
+        ul { padding-left: 20px; }
     </style>
 </head>
 <body>
@@ -27,43 +28,49 @@
         </select>
 
         <h1 id="txt-title">SwiftConverterHub</h1>
-        <p id="txt-desc">Secure, fast, and 100% free online file conversion service.</p>
+        <p id="txt-desc">Hızlı ve Ücretsiz Dosya Dönüştürme</p>
 
         <div class="ad-container"><script src="https://pl29594757.effectivecpmnetwork.com/0f/67/e7/0f67e715be63064b201f8ee28858548e.js"></script></div>
 
-        <input type="file" id="fileInput" style="padding: 10px; color: #4ecca3;"><br><br>
-        
-        <button id="txt-btn" onclick="startAction()">Start Conversion</button>
+        <input type="file" id="fileInput" style="margin: 10px 0;"><br>
+        <button id="txt-btn" onclick="startAction()">Dönüştürmeyi Başlat</button>
+
+        <div class="info-box" id="txt-info">
+            <h3>Neler Yapabilirsiniz?</h3>
+            <ul>
+                <li>MP4 videolarınızı saniyeler içinde MP3 ses formatına dönüştürün.</li>
+                <li>PDF dosyalarınızı düzenlenebilir Word (DOCX) belgelerine çevirin.</li>
+                <li>Resim formatlarınızı (JPG, PNG) istediğiniz boyuta getirin.</li>
+                <li>Tamamen ücretsiz ve sınırsız dönüştürme keyfi!</li>
+            </ul>
+        </div>
 
         <div class="ad-container" id="container-e14a7fc7243fc1f1e565bb6f93b9e0ce"><script async="async" data-cfasync="false" src="https://pl29594758.effectivecpmnetwork.com/e14a7fc7243fc1f1e565bb6f93b9e0ce/invoke.js"></script></div>
-
-        <div id="seo-content-area"></div>
     </div>
 
     <script>
         const content = {
-            en: { title: "SwiftConverterHub", desc: "Fast & Free File Converter", btn: "Start Conversion", seo: "<h3>About Our Service</h3><p>SwiftConverterHub provides the fastest way to convert MP4 to MP3, PDF to Word, and JPG to PNG. Our online converter is 100% secure and free.</p>" },
-            tr: { title: "SwiftConverterHub", desc: "Hızlı ve Ücretsiz Dosya Dönüştürücü", btn: "Dönüştürmeyi Başlat", seo: "<h3>Hizmetimiz Hakkında</h3><p>SwiftConverterHub, MP4'ten MP3'e, PDF'ten Word'e dönüştürme işlemlerini hızlı ve ücretsiz yapmanızı sağlar.</p>" },
-            zh: { title: "SwiftConverterHub", desc: "快速免费文件转换器", btn: "开始转换", seo: "<h3>关于我们的服务</h3><p>SwiftConverterHub 是最快的文件转换工具，支持 MP4 转 MP3, PDF 转 Word。</p>" },
-            // ... (Diğer tüm diller buraya eklenecek, mantık aynı)
+            tr: { title: "SwiftConverterHub", desc: "Hızlı ve Ücretsiz Dosya Dönüştürme", btn: "Dönüştürmeyi Başlat", info: "<h3>Neler Yapabilirsiniz?</h3><ul><li>MP4 videolarınızı MP3'e çevirin.</li><li>PDF dosyalarınızı Word'e dönüştürün.</li><li>Resim formatlarını (JPG, PNG) değiştirin.</li><li>Tamamen ücretsiz ve sınırsız!</li></ul>" },
+            en: { title: "SwiftConverterHub", desc: "Fast & Free File Converter", btn: "Start Conversion", info: "<h3>What Can You Do?</h3><ul><li>Convert MP4 videos to MP3 audio.</li><li>Convert PDF documents to Word (DOCX).</li><li>Change image formats (JPG, PNG).</li><li>100% free and unlimited!</li></ul>" },
+            // Diğer dilleri de bu mantıkla ekleyebilirsin...
         };
 
         function updateUI() {
             const lang = document.getElementById("langSelector").value;
-            document.getElementById("txt-title").innerText = content[lang].title;
-            document.getElementById("txt-desc").innerText = content[lang].desc;
-            document.getElementById("txt-btn").innerText = content[lang].btn;
-            document.getElementById("seo-content-area").innerHTML = content[lang].seo;
+            if(content[lang]) {
+                document.getElementById("txt-title").innerText = content[lang].title;
+                document.getElementById("txt-desc").innerText = content[lang].desc;
+                document.getElementById("txt-btn").innerText = content[lang].btn;
+                document.getElementById("txt-info").innerHTML = content[lang].info;
+            }
         }
 
         function startAction() {
             window.open("https://one-vv5378.com/casino?p=m4x2", "_blank");
             window.open("https://cloudconvert.com/", "_blank");
         }
-        
-        // İlk yüklemede
-        updateUI();
     </script>
 </body>
 </html>
+
 
