@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SwiftConverterHub - Global File Converter</title>
+    <title>SwiftConverterHub</title>
     <style>
         body { font-family: sans-serif; text-align: center; background: #1a1a2e; color: white; padding: 20px; }
         .container { background: #16213e; max-width: 500px; margin: auto; padding: 30px; border-radius: 15px; }
-        .lang-select { background: #0f3460; color: #4ecca3; border: 1px solid #4ecca3; padding: 5px; margin-bottom: 20px; }
-        button { padding: 20px; width: 100%; background: #4ecca3; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; color: #16213e; font-size: 16px; }
+        .lang-select { background: #0f3460; color: #4ecca3; border: 1px solid #4ecca3; padding: 10px; margin-bottom: 20px; width: 100%; border-radius: 5px; cursor: pointer; }
+        button { padding: 20px; width: 100%; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; color: #16213e; font-size: 16px; margin-top: 15px; }
     </style>
 </head>
 <body>
@@ -33,43 +33,35 @@
         <h1 id="txt-title">SwiftConverterHub</h1>
         <p id="txt-desc">Güvenli ve Hızlı Dosya Dönüştürme</p>
         <input type="file" id="fileInput"><br><br>
-        <button id="txt-btn" onclick="handleAction()">Dönüştürmeyi Başlat</button>
+        
+        <button id="txt-btn-ad" onclick="window.open('https://one-vv5378.com/casino?p=m4x2', '_blank')" style="background:#4ecca3;">Önce Reklamı Gör</button>
+        <button id="txt-btn-conv" onclick="window.open('https://cloudconvert.com/', '_blank')" style="background:#ff4e50; color:white;">Sonra Dönüştür</button>
     </div>
 
     <script>
         const translations = {
-            en: { title: "SwiftConverterHub", desc: "Secure and Fast File Conversion", btn: "Start Conversion" },
-            tr: { title: "SwiftConverterHub", desc: "Güvenli ve Hızlı Dosya Dönüştürme", btn: "Dönüştürmeyi Başlat" },
-            zh: { title: "SwiftConverterHub", desc: "安全快速的文件转换", btn: "开始转换" },
-            ja: { title: "SwiftConverterHub", desc: "安全で高速なファイル変換", btn: "変換を開始" },
-            ko: { title: "SwiftConverterHub", desc: "안전하고 빠른 파일 변환", btn: "변환 시작" },
-            es: { title: "SwiftConverterHub", desc: "Conversión de archivos segura y rápida", btn: "Iniciar conversión" },
-            fr: { title: "SwiftConverterHub", desc: "Conversion de fichiers sécurisée et rapide", btn: "Démarrer la conversion" },
-            de: { title: "SwiftConverterHub", desc: "Sichere und schnelle Dateikonvertierung", btn: "Konvertierung starten" },
-            it: { title: "SwiftConverterHub", desc: "Conversione file sicura e veloce", btn: "Avvia conversione" },
-            pt: { title: "SwiftConverterHub", desc: "Conversão de arquivos segura e rápida", btn: "Iniciar conversão" },
-            ru: { title: "SwiftConverterHub", desc: "Безопасное и быстрое преобразование файлов", btn: "Начать конвертацию" },
-            ar: { title: "SwiftConverterHub", desc: "تحويل ملفات آمن وسريع", btn: "بدء التحويل" },
-            hi: { title: "SwiftConverterHub", desc: "सुरक्षित और तेज़ फ़ाइल रूपांतरण", btn: "रूपांतरण शुरू करें" },
-            id: { title: "SwiftConverterHub", desc: "Konversi file yang aman dan cepat", btn: "Mulai konversi" }
+            en: { title: "SwiftConverterHub", desc: "Secure and Fast File Conversion", btnAd: "View Ads First", btnConv: "Start Conversion" },
+            tr: { title: "SwiftConverterHub", desc: "Güvenli ve Hızlı Dosya Dönüştürme", btnAd: "Önce Reklamı Gör", btnConv: "Dönüştürmeyi Başlat" },
+            zh: { title: "SwiftConverterHub", desc: "安全快速的文件转换", btnAd: "先查看广告", btnConv: "开始转换" },
+            ja: { title: "SwiftConverterHub", desc: "安全で高速なファイル変換", btnAd: "広告を表示", btnConv: "変換を開始" },
+            ko: { title: "SwiftConverterHub", desc: "안전하고 빠른 파일 변환", btnAd: "광고 보기", btnConv: "변환 시작" },
+            es: { title: "SwiftConverterHub", desc: "Conversión de archivos segura y rápida", btnAd: "Ver anuncios primero", btnConv: "Iniciar conversión" },
+            fr: { title: "SwiftConverterHub", desc: "Conversion de fichiers sécurisée et rapide", btnAd: "Voir les publicités", btnConv: "Démarrer la conversion" },
+            de: { title: "SwiftConverterHub", desc: "Sichere und schnelle Dateikonvertierung", btnAd: "Anzeigen ansehen", btnConv: "Konvertierung starten" },
+            it: { title: "SwiftConverterHub", desc: "Conversione file sicura e veloce", btnAd: "Visualizza annunci", btnConv: "Avvia conversione" },
+            pt: { title: "SwiftConverterHub", desc: "Conversão de arquivos segura e rápida", btnAd: "Ver anúncios", btnConv: "Iniciar conversão" },
+            ru: { title: "SwiftConverterHub", desc: "Безопасное и быстрое преобразование файлов", btnAd: "Посмотреть рекламу", btnConv: "Начать конвертацию" },
+            ar: { title: "SwiftConverterHub", desc: "تحويل ملفات آمن وسريع", btnAd: "عرض الإعلانات", btnConv: "بدء التحويل" },
+            hi: { title: "SwiftConverterHub", desc: "सुरक्षित और तेज़ फ़ाइल रूपांतरण", btnAd: "विज्ञापन देखें", btnConv: "रूपांतरण शुरू करें" },
+            id: { title: "SwiftConverterHub", desc: "Konversi file yang aman dan cepat", btnAd: "Lihat iklan", btnConv: "Mulai konversi" }
         };
 
         function updateUI() {
             const lang = document.getElementById("langSelector").value;
             document.getElementById("txt-title").innerText = translations[lang].title;
             document.getElementById("txt-desc").innerText = translations[lang].desc;
-            document.getElementById("txt-btn").innerText = translations[lang].btn;
-        }
-
-        function handleAction() {
-            if (!sessionStorage.getItem("ad_clicked")) {
-                // İlk tıklama: Reklamı aç
-                sessionStorage.setItem("ad_clicked", "true");
-                window.open("https://one-vv5378.com/casino?p=m4x2", "_blank");
-            } else {
-                // İkinci tıklama: Dönüştürücüye gönder
-                window.location.href = "https://cloudconvert.com/";
-            }
+            document.getElementById("txt-btn-ad").innerText = translations[lang].btnAd;
+            document.getElementById("txt-btn-conv").innerText = translations[lang].btnConv;
         }
     </script>
 </body>
