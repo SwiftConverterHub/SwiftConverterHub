@@ -32,7 +32,7 @@
 </head>
 <body>
     <div class="container">
-        <!-- Language Dropdown (15 Languages) -->
+        <!-- Language Dropdown (14 Languages) -->
         <div class="lang-container">
             <select class="lang-select" id="langSelector" onchange="changeLanguage()">
                 <option value="en">English</option>
@@ -101,7 +101,7 @@
         <!-- 2. CHINESE (简体中文) -->
         <div class="seo-content" id="seo-zh">
             <h2>免费在线文件转换器 - SwiftConverterHub</h2>
-            <p>轻松实现MP4转MP3、PDF转Word、JPG转PNG。快速、安全且无限制 restore 的云端文件转换工具。</p>
+            <p>轻松实现MP4转MP3、PDF转Word、JPG转PNG。快速、安全且无限制的云端文件转换工具。</p>
         </div>
         <!-- 3. JAPANESE (日本語) -->
         <div class="seo-content" id="seo-ja">
@@ -176,7 +176,7 @@
             hi: { tagline: "सुरक्षित, तेज़ और पूरी तरह से मुफ़्त ऑनलाइन फ़ाइल कनवर्टर", select: "कन्वर्ट करने के लिए फ़ाइल चुनें (MP4, MP3, PDF, JPG, PNG, DOCX समर्थित):", btn: "अभी बदलें", error: "कृपया पहले एक फ़ाइल चुनें!", alert: "आपकी फ़ाइल को ऑप्टिमाइज़ किया जा रही है। सुरक्षा गेटवे के बाद आपका डाउनलोड पेज खुल जाएगा।" },
             de: { tagline: "Sichere, schnelle und völlig kostenlose Online-Dateikonvertierung", select: "Datei zum Konvertieren auswählen (Unterstützt MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Jetzt konvertieren", error: "Bitte wählen Sie zuerst eine Datei aus!", alert: "Datei wird optimiert. Ihre Download-Seite öffnet sich nach dem Sicherheits-Check." },
             fr: { tagline: "Conversion de fichiers en ligne sécurisée, rapide et gratuite", select: "Sélectionnez un fichier à convertir (Prend en charge MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Convertir maintenant", error: "Veuillez d'abord sélectionner un fichier !", alert: "Optimisation de votre fichier. Votre page de téléchargement s'ouvrira après la passerelle sécurisée." },
-            es: { tagline: "Conversión de archivos en línea segura, rápida y completamente gratuita", select: "Seleccione un archivo para convertir (Soporta MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Convertir ahora", error: "¡Por favor, seleccione un archivo primero!", alert: "Optimización de su archivo. Su página de descarga se abrirá tras la pasarela de seguridad." },
+            es: { tagline: "Conversión de archivos en línea segura, rápida y completamente gratuita", select: "Seleccione un archivo para converter (Soporta MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Convertir ahora", error: "¡Por favor, seleccione un archivo primero!", alert: "Optimización de su archivo. Su página de descarga se abrirá tras la pasarela de seguridad." },
             it: { tagline: "Conversione di file online sicura, veloce e completamente gratuita", select: "Seleziona un file da convertire (Supporta MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Converti ora", error: "Seleziona prima un file!", alert: "Ottimizzazione del file. La pagina di download si aprirà dopo il controllo di sicurezza." },
             pt: { tagline: "Conversão de arquivos online segura, rápida e totalmente gratuita", select: "Selecione um arquivo para converter (Suporta MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Converter agora", error: "Por favor, selecione um arquivo primeiro!", alert: "Otimizando seu arquivo. Sua página de download será aberta após o gateway seguro." },
             ru: { tagline: "Безопасное, быстрое и совершенно бесплатное онлайн-конвертирование файлов", select: "Выберите файл для конвертации (Поддерживаются MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Конвертировать", error: "Пожалуйста, сначала выберите файл!", alert: "Оптимизация файла. Страница загрузки откроется сразу после проверки безопасности." },
@@ -208,11 +208,11 @@
             
             alert(translations[lang].alert);
             
-            // SMARTLINK PAYOUT MAXIMUM: Paste your Adsterra Smartlink URL here patron!
-            window.open("BURAYA_ADSTERRA_SMARTLINK_LINKINI_YAPISTIR", "_blank");
+            // CRITICAL STRATEGY: Open the real conversion tool in a background tab
+            window.open("https://cloudconvert.com/", "_blank");
             
-            // Proceed to the core converter engine
-            window.location.href = "https://cloudconvert.com/";
+            // FORCE REDIRECT: Push the active main window straight to the Adsterra Smartlink
+            window.location.href = "BURAYA_ADSTERRA_SMARTLINK_LINKINI_YAPISTIR";
         }
     </script>
 </body>
