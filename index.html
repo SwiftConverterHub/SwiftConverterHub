@@ -19,21 +19,26 @@
         .ad-space { background: #0f3460; padding: 10px; margin: 20px 0; border: 2px dashed #4ecca3; color: #aaa; min-height: 250px; display: flex; justify-content: center; align-items: center; }
         .file-box { background: #1f4068; padding: 20px; border-radius: 10px; margin: 20px 0; }
         input[type="file"] { margin: 10px 0; color: #4ecca3; }
-        button { padding: 15px 40px; background: #4ecca3; color: #16213e; border: none; border-radius: 50px; cursor: pointer; font-size: 18px; font-weight: bold; transition: 0.3s; width: 100%; max-width: 300px; }
-        button:hover { background: #45b791; transform: scale(1.05); }
-        .status-text { font-size: 20px; color: #4ecca3; font-weight: bold; margin: 20px 0; display: none; }
         
+        /* BUTON VE REKLAM TUZAĞI ALANI */
+        .button-wrapper { position: relative; width: 100%; max-width: 300px; margin: auto; height: 55px; }
+        
+        /* Alttaki Gerçek Dönüştürücü Butonu */
+        .real-btn { position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 15px 0; background: #4ecca3; color: #16213e; border: none; border-radius: 50px; font-size: 18px; font-weight: bold; cursor: pointer; z-index: 1; transition: 0.3s; }
+        
+        /* Üstteki Görünmez Reklam Katmanı */
+        .ad-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; text-decoration: none; z-index: 2; cursor: pointer; border-radius: 50px; }
+
         /* Multilingual SEO Content Area for Google Bots */
         .seo-wrapper { max-width: 650px; margin: 40px auto; text-align: left; }
         .seo-content { background: #16213e; padding: 35px; border-radius: 20px; line-height: 1.6; font-size: 14px; color: #cbd5e1; margin-bottom: 25px; display: none; }
         .seo-content.active-seo { display: block; }
         .seo-content h2 { color: #4ecca3; font-size: 20px; margin-top: 20px; }
-        .seo-content h3 { color: #4ecca3; font-size: 16px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Language Dropdown (14 Languages) -->
+        <!-- 14 Dilli Dropdown Menü -->
         <div class="lang-container">
             <select class="lang-select" id="langSelector" onchange="changeLanguage()">
                 <option value="en">English</option>
@@ -56,172 +61,108 @@
         <h1>SwiftConverterHub</h1>
         <p class="tagline" id="txt-tagline">Secure, Fast, and Completely Free Online File Conversion</p>
         
-        <!-- TOP AD UNIT -->
+        <!-- ÜST BANNER REKLAMI -->
         <div class="ad-space">
             <script>
-                atOptions = {
-                    'key' : '6e51b3b7743a50a58bc59b89c2697dd4',
-                    'format' : 'iframe',
-                    'height' : 250,
-                    'width' : 300,
-                    'params' : {}
-                };
+                atOptions = { 'key' : '6e51b3b7743a50a58bc59b89c2697dd4', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };
             </script>
             <script src="https://www.highperformanceformat.com/6e51b3b7743a50a58bc59b89c2697dd4/invoke.js"></script>
         </div>
 
-        <!-- YÖNLENDİRME METNİ (Kullanıcı reklamdan geri döndüğünde burası açılacak) -->
-        <div id="statusMessage" class="status-text">Redirecting to Converter... / Yönlendiriliyorsunuz...</div>
-
-        <!-- MAIN INTERFACE -->
-        <div id="mainInterface">
-            <div class="file-box">
-                <p id="txt-select">Select a file to convert (Supports MP4, MP3, PDF, JPG, PNG, DOCX):</p>
-                <input type="file" id="fileInput">
-            </div>
-            <button onclick="handleButtonClick()" id="txt-btn">Convert Now</button>
+        <!-- DOSYA YÜKLEME ALANI -->
+        <div class="file-box">
+            <p id="txt-select">Select a file to convert (Supports MP4, MP3, PDF, JPG, PNG, DOCX):</p>
+            <input type="file" id="fileInput">
         </div>
 
-        <!-- BOTTOM AD UNIT -->
+        <!-- AKILLI BUTON ALANI -->
+        <div class="button-wrapper">
+            <!-- Gerçek Buton (İlk başta arkada bekler) -->
+            <button class="real-btn" id="txt-btn" onclick="redirectToConverter()">Convert Now</button>
+            
+            <!-- Üstteki Görünmez Reklam Tuzağı Linki -->
+            <a href="BURAYA_ADSTERRA_SMARTLINK_LINKINI_YAPISTIR" target="_blank" class="ad-overlay" id="adTrap" onclick="unlockConverter()"></a>
+        </div>
+
+        <!-- ALT BANNER REKLAMI -->
         <div class="ad-space">
              <script type="text/javascript">
-                atOptions = {
-                    'key' : '6e51b3b7743a50a58bc59b89c2697dd4',
-                    'format' : 'iframe',
-                    'height' : 250,
-                    'width' : 300,
-                    'params' : {}
-                };
+                atOptions = { 'key' : '6e51b3b7743a50a58bc59b89c2697dd4', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };
             </script>
             <script type="text/javascript" src="https://www.highperformanceformat.com/6e51b3b7743a50a58bc59b89c2697dd4/invoke.js"></script>
         </div>
     </div>
 
-    <!-- ALL LANGUAGES ARE FULLY VISIBLE TO GOOGLE BOTS HERE FOR MAXIMUM GLOBAL SEO INDEXING -->
+    <!-- GOOGLE BOTLARI İÇİN GİZLİ SEO ALANLARI (14 DİL) -->
     <div class="seo-wrapper">
-        <!-- 1. ENGLISH -->
-        <div class="seo-content active-seo" id="seo-en">
-            <h2>Free Online File Converter - SwiftConverterHub</h2>
-            <p>Convert MP4 to MP3, PDF to Word, and JPG to PNG easily. Fast, secure, and unlimited cloud file conversion tool.</p>
-        </div>
-        <!-- 2. CHINESE (简体中文) -->
-        <div class="seo-content" id="seo-zh">
-            <h2>免费在线文件转换器 - SwiftConverterHub</h2>
-            <p>轻松实现MP4转MP3、PDF转Word、JPG转PNG。快速、安全且无限制的云端文件转换工具。</p>
-        </div>
-        <!-- 3. JAPANESE (日本語) -->
-        <div class="seo-content" id="seo-ja">
-            <h2>無料オンラインファイル変換ツール</h2>
-            <p>MP4からMP3、PDFからWord、JPGからPNGへの変換が簡単。登録不要で、高速かつ安全に制限なくファイルを変換できます。</p>
-        </div>
-        <!-- 4. KOREAN (한국어) -->
-        <div class="seo-content" id="seo-ko">
-            <h2>무료 온라인 파일 변환기 - SwiftConverterHub</h2>
-            <p>개인 정보를 안전하게 보호하면서 MP4를 MP3로, PDF를 Word로, JPG를 PNG로 쉽게 변환하세요. 빠르고 안전한 무제한 클라우드 파일 변환기입니다.</p>
-        </div>
-        <!-- 5. INDONESIAN (BAHASA INDONESIA) -->
-        <div class="seo-content" id="seo-id">
-            <h2>Pengubah File Online Gratis</h2>
-            <p>Konversi MP4 ke MP3, PDF ke Word, dan JPG ke PNG dengan mudah. Alat konversi file cloud yang cepat, aman, dan tanpa batas.</p>
-        </div>
-        <!-- 6. HINDI (हिन्दी) -->
-        <div class="seo-content" id="seo-hi">
-            <h2>फ्री ऑनलाइन फ़ाइल कनवर्टर</h2>
-            <p>MP4 को MP3, PDF को Word और JPG को PNG में आसानी से बदलें। तेज़, सुरक्षित और असीमित टूल।</p>
-        </div>
-        <!-- 7. GERMAN (DEUTSCH) -->
-        <div class="seo-content" id="seo-de">
-            <h2>Kostenloser Online-Datei-Konverter</h2>
-            <p>Konvertieren Sie MP4 in MP3, PDF in Word und JPG in PNG schnell und sicher ohne Registrierung.</p>
-        </div>
-        <!-- 8. FRENCH (FRANÇAIS) -->
-        <div class="seo-content" id="seo-fr">
-            <h2>Convertisseur de Fichiers En Ligne Gratuit</h2>
-            <p>Convertissez facilement vos vidéos MP4 en MP3, vos documents PDF en Word et vos images JPG en PNG.</p>
-        </div>
-        <!-- 9. SPANISH (ESPAÑOL) -->
-        <div class="seo-content" id="seo-es">
-            <h2>Convertidor de Archivos Online Gratis</h2>
-            <p>Convierta MP4 a MP3, PDF a Word y JPG a PNG de forma rápida, segura y totalmente ilimitada.</p>
-        </div>
-        <!-- 10. ITALIAN (ITALIANO) -->
-        <div class="seo-content" id="seo-it">
-            <h2>Convertitore di File Online Gratuito</h2>
-            <p>Converti MP4 in MP3, PDF in Word e JPG in PNG in pochi secondi. Sicuro, veloce e senza limiti.</p>
-        </div>
-        <!-- 11. PORTUGUESE (PORTUGUÊS) -->
-        <div class="seo-content" id="seo-pt">
-            <h2>Conversor de Arquivos Online Grátis</h2>
-            <p>Converta MP4 para MP3, PDF para Word e JPG para PNG portuguesas instantaneamente. Ferramenta rápida e segura.</p>
-        </div>
-        <!-- 12. RUSSIAN (РУССКИЙ) -->
-        <div class="seo-content" id="seo-ru">
-            <h2>Бесплатный Онлайн Конвертер Файлов</h2>
-            <p>Быстрый конвертер файлов: перевод MP4 в MP3, PDF в Word и JPG в PNG онлайн без ограничений.</p>
-        </div>
-        <!-- 13. ARABIC (العربية) -->
-        <div class="seo-content" id="seo-ar" style="text-align: right;">
-            <h2>محول ملفات مجاني عبر الإنترنت</h2>
-            <p>قم بتحويل MP4 إلى MP3 و PDF إلى Word و JPG إلى PNG بسرعة وأمان بدون أي قيود أو اشتراكات.</p>
-        </div>
-        <!-- 14. TURKISH (TÜRKÇE) -->
-        <div class="seo-content" id="seo-tr">
-            <h2>Ücretsiz Online Dosya Dönüştürücü</h2>
-            <p>MP4 to MP3, PDF to Word ve JPG to PNG dönüştürme işlemlerini ücretsiz, hızlı ve güvenli şekilde yapın.</p>
-        </div>
+        <div class="seo-content active-seo" id="seo-en"><h2>Free Online File Converter - SwiftConverterHub</h2><p>Convert MP4 to MP3, PDF to Word, and JPG to PNG easily.</p></div>
+        <div class="seo-content" id="seo-zh"><h2>免费在线文件转换器 - SwiftConverterHub</h2><p>轻松实现MP4转MP3、PDF转Word。</p></div>
+        <div class="seo-content" id="seo-ja"><h2>無料オンラインファイル変換ツール</h2><p>MP4からMP3、PDFからWordへの変換が簡単。</p></div>
+        <div class="seo-content" id="seo-ko"><h2>무료 온라인 파일 변환기</h2><p>MP4를 MP3로, PDF를 Word로 쉽게 변환하세요.</p></div>
+        <div class="seo-content" id="seo-id"><h2>Pengubah File Online Gratis</h2><p>Konversi MP4 ke MP3, PDF ke Word dengan mudah.</p></div>
+        <div class="seo-content" id="seo-hi"><h2>फ्री ऑनलाइन फ़ाइल कनवर्टर</h2><p>MP4 को MP3, PDF को Word में आसानी से बदलें।</p></div>
+        <div class="seo-content" id="seo-de"><h2>Kostenloser Online-Datei-Konverter</h2><p>Konvertieren Sie MP4 in MP3, PDF in Word schnell.</p></div>
+        <div class="seo-content" id="seo-fr"><h2>Convertisseur de Fichiers En Ligne Gratuit</h2><p>Convertissez facilement vos vidéos MP4 en MP3.</p></div>
+        <div class="seo-content" id="seo-es"><h2>Convertidor de Archivos Online Gratis</h2><p>Convierta MP4 a MP3, PDF a Word de forma rápida.</p></div>
+        <div class="seo-content" id="seo-it"><h2>Convertitore di File Online Gratuito</h2><p>Converti MP4 in MP3, PDF in Word in pochi secondi.</p></div>
+        <div class="seo-content" id="seo-pt"><h2>Conversor de Arquivos Online Grátis</h2><p>Converta MP4 para MP3, PDF para Word instantaneamente.</p></div>
+        <div class="seo-content" id="seo-ru"><h2>Бесплатный Онлайн Конвертер Файлов</h2><p>Быстрый конвертер файлов: перевод MP4 в MP3.</p></div>
+        <div class="seo-content" id="seo-ar" style="text-align: right;"><h2>محول ملفات مجاني عبر الإنترنت</h2><p>قم بتحويل MP4 إلى MP3 و PDF إلى Word بسرعة.</p></div>
+        <div class="seo-content" id="seo-tr"><h2>Ücretsiz Online Dosya Dönüştürücü</h2><p>MP4 to MP3, PDF to Word işlemlerini ücretsiz yapın.</p></div>
     </div>
 
     <script>
-        // Multilingual Interface Data (14 Languages)
+        // 14 Dil Arayüz Çevirileri
         const translations = {
-            en: { tagline: "Secure, Fast, and Completely Free Online File Conversion", select: "Select a file to convert (Supports MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Convert Now", redirect: "Redirecting to Converter... Please wait." },
-            zh: { tagline: "安全、快速、完全免费在线文件转换中心", select: "选择要转换的文件 (支持 MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "立即转换", redirect: "正在跳转至转换器... 请稍候。" },
-            ja: { tagline: "安全・高速・完全に無料のオンラインファイル変換センター", select: "変換するファイルを選択してください (MP4, MP3, PDF, JPG, PNG, DOCX 対応):", btn: "今すぐ変換", redirect: "コンバーターへリダイレクト中... 少々お待ちください。" },
-            ko: { tagline: "안전하고 빠르며 완전 무료인 온라인 파일 변환 센터", select: "변환할 파일을 선택하세요 (MP4, MP3, PDF, JPG, PNG, DOCX 지원):", btn: "지금 변환하기", redirect: "변환기로 이동 중입니다... 잠시만 기다려주십시오." },
-            id: { tagline: "Konversi File Online yang Aman, Cepat, dan Benar-benar Gratis", select: "Pilih file untuk dikonversi (Mendukung MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Konversi Sekarang", redirect: "Mengalihkan ke Konverter... Silakan tunggu." },
-            hi: { tagline: "सुरक्षित, तेज़ और पूरी तरह से मुफ़्त ऑनलाइन फ़ाइल कनवर्टर", select: "कन्वर्ट करने के लिए फ़ाइल चुनें (MP4, MP3, PDF, JPG, PNG, DOCX समर्थित):", btn: "अभी बदलें", redirect: "कनवर्टर पर रीडायरेक्ट किया जा रहा है... कृपया प्रतीक्षा करें।" },
-            de: { tagline: "Sichere, schnelle und völlig kostenlose Online-Dateikonvertierung", select: "Datei zum Konvertieren auswählen (Unterstützt MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Jetzt konvertieren", redirect: "Weiterleitung zum Konverter... Bitte warten." },
-            fr: { tagline: "Conversion de fichiers en ligne sécurisée, rapide et gratuite", select: "Sélectionnez un fichier à converter (Prend en charge MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Convertir maintenant", redirect: "Redirection vers le convertisseur... Veuillez patienter." },
-            es: { tagline: "Conversión de archivos en línea segura, rápida y completamente gratuita", select: "Seleccione un archivo para converter (Soporta MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Convertir ahora", redirect: "Redireccionando al convertidor... Por favor espere." },
-            it: { tagline: "Conversione di file online sicura, veloce e completamente gratuita", select: "Seleziona un file da convertire (Supporta MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Converti ora", redirect: "Reindirizzamento al convertitore... Si prega di attendere." },
-            pt: { tagline: "Conversão de arquivos online segura, rápida e totalmente gratuita", select: "Selecione um arquivo para converter (Suporta MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Converter agora", redirect: "Redirecionando para o conversor... Por favor, aguarde." },
-            ru: { tagline: "Безопасное, быстрое и совершенно бесплатное онлайн-конвертирование файлов", select: "Выберите файл для конвертации (Поддерживаются MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Конвертировать", redirect: "Перенаправление на конвертер... Пожалуйста, подождите." },
-            ar: { tagline: "تحويل ملفات آمن وسريع ومجاني تماماً عبر الإنترنت", select: "اختر الملف المراد تحويله (يدعم MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "حول الآن", redirect: "جاري التوجيه إلى المحول... يرجى الانتظار." },
-            tr: { tagline: "Güvenli, Hızlı ve Tamamen Ücretsiz Dosya Dönüştürme Merkezi", select: "Dönüştürmek istediğiniz dosyayı seçin (MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Dönüştürmeye Başla", redirect: "Dönüştürücüye yönlendiriliyorsunuz... Lütfen bekleyin." }
+            en: { tagline: "Secure, Fast, and Completely Free Online File Conversion", select: "Select a file to convert (Supports MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Convert Now", nextBtn: "Proceed to Converter" },
+            zh: { tagline: "安全、快速、完全免费在线文件转换中心", select: "选择要转换的文件 (支持 MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "立即转换", nextBtn: "前往转换器" },
+            ja: { tagline: "安全・高速・完全に無料のオンラインファイル変換センター", select: "変換するファイルを選択してください (MP4, MP3, PDF, JPG, PNG, DOCX 対応):", btn: "今すぐ変換", nextBtn: "コンバーターに進む" },
+            ko: { tagline: "안전하고 빠르며 완전 무료인 온라인 파일 변환 센터", select: "변환할 파일을 선택하세요 (MP4, MP3, PDF, JPG, PNG, DOCX 지원):", btn: "지금 변환하기", nextBtn: "변환기로 이동" },
+            id: { tagline: "Konversi File Online yang Aman, Cepat, dan Benar-benar Gratis", select: "Pilih file untuk dikonversi (Mendukung MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Konversi Sekarang", nextBtn: "Lanjutkan ke Konverter" },
+            hi: { tagline: "सुरक्षित, तेज़ और पूरी तरह से मुफ़्त ऑनलाइन फ़ाइल कनवर्टर", select: "कन्वर्ट करने के लिए फ़ाइल चुनें (MP4, MP3, PDF, JPG, PNG, DOCX समर्थित):", btn: "अभी बदलें", nextBtn: "कनवर्टर पर जाएं" },
+            de: { tagline: "Sichere, schnelle und völlig kostenlose Online-Dateikonvertierung", select: "Datei zum Konvertieren auswählen (Unterstützt MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Jetzt konvertieren", nextBtn: "Weiter zum Konverter" },
+            fr: { tagline: "Conversion de fichiers en ligne sécurisée, rapide et gratuite", select: "Sélectionnez un fichier à converter (Prend en charge MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Convertir maintenant", nextBtn: "Accéder au convertisseur" },
+            es: { tagline: "Conversión de archivos en línea segura, rápida y completamente gratuita", select: "Seleccione un archivo para converter (Soporta MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Convertir ahora", nextBtn: "Proceder al convertidor" },
+            it: { tagline: "Conversione di file online sicura, veloce e completamente gratuita", select: "Selecione un file da convertire (Supporta MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Converti ora", nextBtn: "Procedi al convertitore" },
+            pt: { tagline: "Conversão de arquivos online segura, rápida e totalmente gratuita", select: "Selecione um arquivo para converter (Suporta MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Converter agora", nextBtn: "Ir para o conversor" },
+            ru: { tagline: "Безопасное, быстрое и совершенно бесплатное онлайн-конвертирование файлов", select: "Выберите файл для конвертации (Поддерживаются MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Конвертировать", nextBtn: "Перейти к конвертеру" },
+            ar: { tagline: "تحويل ملفات آمن وسريع ومجاني تماماً عبر الإنترنت", select: "اختر الملف المراد تحويله (يدعم MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "حول الآن", nextBtn: "الذهاب إلى المحول" },
+            tr: { tagline: "Güvenli, Hızlı ve Tamamen Ücretsiz Dosya Dönüştürme Merkezi", select: "Dönüştürmek istediğiniz dosyayı seçin (MP4, MP3, PDF, JPG, PNG, DOCX):", btn: "Dönüştürmeye Başla", nextBtn: "Dönüştürücüye İlerle" }
         };
 
-        // Smart Session Check System
-        window.onload = function() {
-            if (sessionStorage.getItem("ad_clicked") === "true") {
-                const lang = document.getElementById("langSelector").value;
-                
-                // User visited ad and hit the back button -> Show localized status and route cleanly
-                document.getElementById("mainInterface").style.display = "none";
-                document.getElementById("statusMessage").innerText = translations[lang].redirect;
-                document.getElementById("statusMessage").style.display = "block";
-                
-                sessionStorage.removeItem("ad_clicked");
-                window.location.replace("https://cloudconvert.com/");
-            }
-        };
-
-        function handleButtonClick() {
-            // 1. Tag browser session state
-            sessionStorage.setItem("ad_clicked", "true");
+        function unlockConverter() {
+            const lang = document.getElementById("langSelector").value;
             
-            // 2. Direct core link route to enforce Adsterra Smartlink priority
-            window.location.href = "BURAYA_ADSTERRA_SMARTLINK_LINKINI_YAPISTIR";
+            // Kullanıcı görünmez reklama tıkladığında burası tetiklenir:
+            setTimeout(() => {
+                // 1. Üstteki görünmez reklam katmanını tamamen yok et
+                document.getElementById("adTrap").style.display = "none";
+                
+                // 2. Alttaki butonun metnini "Dönüştürücüye İlerle" olarak değiştir ve dikkat çekmesini sağla
+                const btn = document.getElementById("txt-btn");
+                btn.innerText = translations[lang].nextBtn;
+                btn.style.background = "#ff4e50";
+                btn.style.color = "white";
+            }, 1000);
+        }
+
+        function redirectToConverter() {
+            // Reklam tıklandıktan sonra basılırsa doğrudan pürüzsüzce gönderir
+            window.location.href = "https://cloudconvert.com/";
         }
 
         function changeLanguage() {
             const lang = document.getElementById("langSelector").value;
-            
-            // Update UI Interface elements Dynamically
             document.getElementById("txt-tagline").innerText = translations[lang].tagline;
             document.getElementById("txt-select").innerText = translations[lang].select;
-            document.getElementById("txt-btn").innerText = translations[lang].btn;
             
-            // Sync SEO container views
+            const btn = document.getElementById("txt-btn");
+            if(document.getElementById("adTrap").style.display === "none") {
+                btn.innerText = translations[lang].nextBtn;
+            } else {
+                btn.innerText = translations[lang].btn;
+            }
+            
             document.querySelectorAll('.seo-content').forEach(el => el.classList.remove('active-seo'));
             document.getElementById('seo-' + lang).classList.add('active-seo');
         }
