@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
@@ -7,8 +7,8 @@
     <style>
         body { font-family: sans-serif; text-align: center; background: #1a1a2e; color: white; padding: 20px; }
         .container { background: #16213e; max-width: 500px; margin: auto; padding: 20px; border-radius: 15px; }
-        .ad-container { margin: 20px 0; min-height: 100px; }
-        .lang-select { background: #0f3460; color: #4ecca3; padding: 10px; width: 100%; margin-bottom: 20px; border-radius: 5px; }
+        .ad-container { margin: 15px 0; border: 2px dashed #4ecca3; padding: 10px; }
+        .lang-select { background: #0f3460; color: #4ecca3; padding: 10px; width: 100%; margin-bottom: 20px; border-radius: 5px; cursor: pointer; }
         button { padding: 20px; width: 100%; background: #4ecca3; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; color: #16213e; font-size: 18px; }
     </style>
 </head>
@@ -22,29 +22,20 @@
             <option value="hi">हिन्दी</option><option value="id">Bahasa Indonesia</option>
         </select>
 
-        <h1>SwiftConverterHub</h1>
+        <h1 id="txt-title">SwiftConverterHub</h1>
 
-        <!-- Reklam Alanı 1 -->
         <div class="ad-container">
             <script src="https://pl29594757.effectivecpmnetwork.com/0f/67/e7/0f67e715be63064b201f8ee28858548e.js"></script>
         </div>
 
-        <!-- Reklam Alanı 2 -->
+        <input type="file" id="fileInput"><br><br>
+        
+        <button id="txt-btn" onclick="startAction()">Dönüştürmeyi Başlat</button>
+
         <div class="ad-container" id="container-e14a7fc7243fc1f1e565bb6f93b9e0ce">
             <script async="async" data-cfasync="false" src="https://pl29594758.effectivecpmnetwork.com/e14a7fc7243fc1f1e565bb6f93b9e0ce/invoke.js"></script>
         </div>
 
-        <input type="file" id="fileInput"><br><br>
-        
-        <!-- Akıllı Buton -->
-        <button id="txt-btn" onclick="startFlow()">Dönüştürmeyi Başlat</button>
-
-        <!-- Reklam Alanı 3 -->
-        <div class="ad-container">
-            <script src="https://pl29594759.effectivecpmnetwork.com/f1/81/ed/f181eda9536dbb48d144935b69653b68.js"></script>
-        </div>
-
-        <!-- Reklam Alanı 4 -->
         <div class="ad-container">
             <script>
               atOptions = { 'key' : '6e51b3b7743a50a58bc59b89c2697dd4', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };
@@ -55,24 +46,33 @@
 
     <script>
         const translations = {
-            tr: { btn: "Dönüştürmeyi Başlat" }, en: { btn: "Start Conversion" },
-            zh: { btn: "开始转换" }, ja: { btn: "変換を開始" }, ko: { btn: "변환 시작" },
-            es: { btn: "Iniciar conversión" }, fr: { btn: "Démarrer la conversion" },
-            de: { btn: "Konvertierung starten" }, it: { btn: "Avvia conversione" },
-            pt: { btn: "Iniciar conversão" }, ru: { btn: "Начать конвертацию" },
-            ar: { btn: "بدء التحويل" }, hi: { btn: "रूपांतरण शुरू करें" }, id: { btn: "Mulai konversi" }
+            tr: { title: "SwiftConverterHub", btn: "Dönüştürmeyi Başlat" }, 
+            en: { title: "SwiftConverterHub", btn: "Start Conversion" },
+            zh: { title: "SwiftConverterHub", btn: "开始转换" }, 
+            ja: { title: "SwiftConverterHub", btn: "変換を開始" }, 
+            ko: { title: "SwiftConverterHub", btn: "변환 시작" },
+            es: { title: "SwiftConverterHub", btn: "Iniciar conversión" }, 
+            fr: { title: "SwiftConverterHub", btn: "Démarrer la conversion" },
+            de: { title: "SwiftConverterHub", btn: "Konvertierung starten" }, 
+            it: { title: "SwiftConverterHub", btn: "Avvia conversione" },
+            pt: { title: "SwiftConverterHub", btn: "Iniciar conversão" }, 
+            ru: { title: "SwiftConverterHub", btn: "Начать конвертацию" },
+            ar: { title: "SwiftConverterHub", btn: "بدء التحويل" }, 
+            hi: { title: "SwiftConverterHub", btn: "रूपांतरण शुरू करें" }, 
+            id: { title: "SwiftConverterHub", btn: "Mulai konversi" }
         };
 
         function updateUI() {
             const lang = document.getElementById("langSelector").value;
+            document.getElementById("txt-title").innerText = translations[lang].title;
             document.getElementById("txt-btn").innerText = translations[lang].btn;
         }
 
-        function startFlow() {
-            // Smartlink reklamı yeni sekmede açılır
+        function startAction() {
+            // Reklamı yeni sekmede aç (404 hatasını engeller)
             window.open("https://one-vv5378.com/casino?p=m4x2", "_blank");
-            // Dönüştürücü ana sitede kalır, bu yüzden 404 hatası biter
-            window.location.href = "https://cloudconvert.com/";
+            // Dönüştürücüyü farklı bir sekmede aç
+            window.open("https://cloudconvert.com/", "_blank");
         }
     </script>
 </body>
